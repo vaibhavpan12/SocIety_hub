@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {
   View,
@@ -20,6 +21,7 @@ const PayBillIcon = () => (
     <View style={[styles.iconCard, { backgroundColor: '#E8F0FE' }]}>
       {/* card body */}
       <View
+        // eslint-disable-next-line
         style={{
           width: 30,
           height: 20,
@@ -351,19 +353,8 @@ const HomeScreen = () => {
 
   return (
     <>
-      {' '}
       <StatusBar barStyle="dark-content" backgroundColor="#F0F4F8" />
       <Header name="good mornig" />
-      {/* ── HEADER ── */}
-      {/* <View style={styles.header}>
-        <View>
-          <Text style={styles.greeting}>Good Morning! ☁️</Text>
-          <Text style={styles.userName}>Rahul Sharma</Text>
-        </View>
-        <View style={styles.avatar}>
-          <Text style={styles.avatarText}>RS</Text>
-        </View>
-      </View> */}
       <ScrollView
         style={styles.scrollView}
         contentContainerStyle={styles.scrollContent}
@@ -422,9 +413,9 @@ const HomeScreen = () => {
             </TouchableOpacity>
           ))}
         </View>
-
+        {/* recent Bills */}
         <View style={{ height: 20 }} />
-        <View style={{gap:12}}>
+        <View style={{ gap: 12 }}>
           <Text style={styles.sectionTitle}>Recent Bills</Text>
           <View style={styles.RecentBills}>
             <View>
@@ -435,19 +426,28 @@ const HomeScreen = () => {
             </View>
             <View>
               <Text style={styles.Price}>₹2,400</Text>
-              <Text style={[styles.PriceStatus,{fontSize:15}]}>Due</Text>
+              <Text style={[styles.PriceStatus, { fontSize: 15 }]}>Due</Text>
             </View>
           </View>
           <View style={styles.RecentBills}>
             <View>
-              <Text style={{ fontSize: 20, fontWeight: 700 }}>
-                March 2025
-              </Text>
+              <Text style={{ fontSize: 20, fontWeight: 700 }}>March 2025</Text>
               <Text style={styles.sectionTitle}>Due: Feb 5</Text>
             </View>
             <View>
-              <Text style={[styles.Price,{color:'#15ff00'}]}>₹3,600</Text>
-              <Text style={[styles.PriceStatus,{fontSize:15 , backgroundColor:'#15ff0034', color:'#15ff00'}]}>Paid</Text>
+              <Text style={[styles.Price, { color: '#15ff00' }]}>₹3,600</Text>
+              <Text
+                style={[
+                  styles.PriceStatus,
+                  {
+                    fontSize: 15,
+                    backgroundColor: '#15ff0034',
+                    color: '#15ff00',
+                  },
+                ]}
+              >
+                Paid
+              </Text>
             </View>
           </View>
         </View>
@@ -728,7 +728,7 @@ const styles = StyleSheet.create({
   RecentBills: {
     backgroundColor: 'white',
     paddingHorizontal: 30,
-    paddingVertical: 50,
+    paddingVertical: 20,
     borderRadius: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -739,16 +739,15 @@ const styles = StyleSheet.create({
     fontWeight: 700,
     color: 'red',
   },
-  PriceStatus:{
-    color:'red',
-    backgroundColor:'#ff31313e',
-    fontSize:20,
-    paddingHorizontal:10,
-    paddingVertical:1,
-    borderRadius:20,
-    textAlign:'center'
-    
-  }
+  PriceStatus: {
+    color: 'red',
+    backgroundColor: '#ff31313e',
+    fontSize: 20,
+    paddingHorizontal: 10,
+    paddingVertical: 1,
+    borderRadius: 20,
+    textAlign: 'center',
+  },
 });
 
 export default HomeScreen;
