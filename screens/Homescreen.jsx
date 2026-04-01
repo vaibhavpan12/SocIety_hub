@@ -424,7 +424,7 @@ const HomeScreen = () => {
         </View>
 
         <View style={{ height: 20 }} />
-        <View style={{}}>
+        <View style={{gap:12}}>
           <Text style={styles.sectionTitle}>Recent Bills</Text>
           <View style={styles.RecentBills}>
             <View>
@@ -435,7 +435,19 @@ const HomeScreen = () => {
             </View>
             <View>
               <Text style={styles.Price}>₹2,400</Text>
-              <Text style={styles.PriceStatus}>Due</Text>
+              <Text style={[styles.PriceStatus,{fontSize:15}]}>Due</Text>
+            </View>
+          </View>
+          <View style={styles.RecentBills}>
+            <View>
+              <Text style={{ fontSize: 20, fontWeight: 700 }}>
+                March 2025
+              </Text>
+              <Text style={styles.sectionTitle}>Due: Feb 5</Text>
+            </View>
+            <View>
+              <Text style={[styles.Price,{color:'#15ff00'}]}>₹3,600</Text>
+              <Text style={[styles.PriceStatus,{fontSize:15 , backgroundColor:'#15ff0034', color:'#15ff00'}]}>Paid</Text>
             </View>
           </View>
         </View>
@@ -715,10 +727,10 @@ const styles = StyleSheet.create({
   },
   RecentBills: {
     backgroundColor: 'white',
-    paddingHorizontal: 50,
+    paddingHorizontal: 30,
     paddingVertical: 50,
     borderRadius: 20,
-    // flexDirection: 'row',
+    flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
